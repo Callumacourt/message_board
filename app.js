@@ -7,8 +7,9 @@ const messageRouter = require("./routes/messageRouter");
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(express.urlencoded({ extended: true }))
 app.use('/', indexRouter);
-app.use('/new', messageRouter);
+app.use('/new', messageRouter);;
 
 app.use((err, req, res, next) => {
     console.log(err.stack);

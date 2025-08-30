@@ -1,17 +1,6 @@
-exports.getHome = (req, res) => {
-    const messages = [
-        {
-            text: "Hi there!",
-            user: "Amando",
-            added: new Date()
-        },
-        {
-            text: "Hello World!",
-            user: "Charles",
-            added: new Date()
-        }
-    ];
+const messages = require('../data/messages');
 
+exports.getHome = (req, res) => {
     res.render('index', { messages });
 };
 
