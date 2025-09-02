@@ -10,6 +10,19 @@
                 <%= msg.text %>
                 <%= msg.added %>
             </p>
+            <button class="openBtn" data-id="<%= msg.id %>">
+                Open
+            </button>
         <% }) %>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('.openBtn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = this.getAttribute('data-id');
+                        window.location.href = `/new/${id}`;
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
